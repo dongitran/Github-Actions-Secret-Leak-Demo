@@ -40,15 +40,6 @@ The workflow in `.github/workflows/vulnerable-workflow.yml` demonstrates:
 - ❌ How base64 encoding exposes secrets
 - ❌ Common vulnerable patterns developers use
 
-## 🎓 Learning Objectives
-
-After reviewing this demo, you should understand:
-
-- Why base64 encoding is not security
-- How GitHub Actions logs can expose secrets
-- Proper patterns for handling secrets securely
-- The importance of secret hygiene in CI/CD pipelines
-
 ## ⚖️ Responsible Disclosure
 
 This repository is for **educational purposes only**. If you discover similar vulnerabilities in production systems:
