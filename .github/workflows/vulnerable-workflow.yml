@@ -1,0 +1,21 @@
+name: Secret Leak Demo
+
+on: [push, pull_request]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: ❌ Vulnerable Base64 Secret
+      run: |
+        echo "🚨 This shows why base64 is NOT secure!"
+        
+        # Developer thinks this is "safe"
+        ENCODED=$(echo "${{ secrets.API_KEY }}" | base64)
+        echo "Encoded: $ENCODED"
+        
+        # But anyone can decode it!
+        echo "Decoded: $(echo $ENCODED | base64 -d)"
